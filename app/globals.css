@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+.action-select {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.todo-list-container {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+.no-todos {
+  text-align: center;
+  color: #888
+}
+/* @layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+} */
+.todo-list-container {
+  width: 100%;
+  max-width: 600px; /* Or whatever max-width you prefer */
+  background: #FFFFFF; /* This will be the white background for the todos */
+  padding: 20px;
+  border-radius: 8px; /* Optional, for rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional, for a slight shadow */
+  margin: 20px auto; /* Center the container */
+}
+@keyframes slideInFromBottomRight {
+  0% {
+    transform: translateY(100vh) translateX(100vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rainbowAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #ff6b6b, #f06595, #6c5ce7, #74b9ff, #55efc4);
+  background-size: 800% 800%;
+  animation: rainbowAnimation 30s ease infinite;
+  color: #333;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  animation: slideInFromBottomRight 1.2s ease-out forwards;
+}
+
+.todo-interface {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: whitesmoke;
+  border-radius: 8px;
+  animation: slideInFromBottomRight 1.2s ease-out 0.3s forwards;
+  opacity: 0;
+  transform: translateY(100vh) translateX(100vw);
+}
+
+.todo-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button-group {
+  text-align: center;
+}
+
+.action-button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  outline: none;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+.action-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.todo-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideInFromBottomRight 1s ease-out forwards;
+}
+
+.todo-actions button {
+  margin-left: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.todo-actions button:hover {
+  text-decoration: underline;
+}
+
+.delete-button {
+  color: #ff4757;
+}
+
+.delete-button:hover {
+  color: #ff6b81;
+}
